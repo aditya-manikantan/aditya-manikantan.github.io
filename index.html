@@ -3,10 +3,9 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Aditya Manikantan — Software Engineer/ Developer</title>
-  <meta name="description" content="Software engineer portfolio — impact-driven, performance-focused, modern projects." />
+  <title>Aditya Manikantan — Software Developer</title>
+  <meta name="description" content="Aditya Manikantan — software developer portfolio: impact, performance, and projects." />
 
-  <!-- Optional: system font stack -->
   <style>
     :root{
       --bg: #0b1020;
@@ -15,97 +14,89 @@
       --text: rgba(255,255,255,.92);
       --muted: rgba(255,255,255,.68);
       --line: rgba(255,255,255,.12);
-      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --shadow: 0 12px 30px rgba(0,0,0,.35);
       --radius: 18px;
 
-      --a: #7c3aed; /* purple */
-      --b: #22c55e; /* green */
-      --c: #06b6d4; /* cyan */
-      --d: #f59e0b; /* amber */
+      --a: #7c3aed;
+      --c: #06b6d4;
+      --g: #22c55e;
     }
 
-    * { box-sizing: border-box; }
-    html, body { height: 100%; }
+    *{ box-sizing:border-box; }
     body{
-      margin: 0;
+      margin:0;
       color: var(--text);
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
       background:
-        radial-gradient(1100px 800px at 10% 10%, rgba(124,58,237,.25), transparent 60%),
-        radial-gradient(900px 700px at 90% 20%, rgba(6,182,212,.18), transparent 55%),
-        radial-gradient(1100px 800px at 40% 120%, rgba(34,197,94,.16), transparent 55%),
+        radial-gradient(1100px 800px at 10% 10%, rgba(124,58,237,.22), transparent 60%),
+        radial-gradient(900px 700px at 90% 20%, rgba(6,182,212,.16), transparent 55%),
         linear-gradient(180deg, #070a14 0%, var(--bg) 100%);
-      overflow-x: hidden;
+      overflow-x:hidden;
     }
+    a{ color:inherit; text-decoration:none; }
+    a:hover{ text-decoration:none; }
 
-    a { color: inherit; text-decoration: none; }
-    a:hover { text-decoration: none; }
-
-    /* ====== layout ====== */
-    .container{
-      width: min(1120px, calc(100% - 40px));
+    .wrap{
+      width: min(980px, calc(100% - 40px));
       margin: 0 auto;
-      padding: 26px 0 90px;
+      padding: 22px 0 80px;
     }
 
     header{
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 14px;
       position: sticky;
       top: 0;
       z-index: 50;
-      padding: 14px 0;
+      padding: 12px 0;
       backdrop-filter: blur(10px);
-      background: linear-gradient(to bottom, rgba(11,16,32,.7), rgba(11,16,32,0));
+      background: linear-gradient(to bottom, rgba(11,16,32,.75), rgba(11,16,32,0));
+      display:flex;
+      align-items:center;
+      justify-content: space-between;
+      gap: 12px;
     }
 
     .brand{
-      display:flex; align-items:center; gap:12px;
+      display:flex; align-items:center; gap:10px;
+      min-width: 0;
     }
     .logo{
-      width: 40px; height: 40px;
+      width: 38px; height: 38px;
       border-radius: 12px;
-      background: radial-gradient(circle at 30% 30%, rgba(255,255,255,.20), rgba(255,255,255,0)),
-                  linear-gradient(135deg, rgba(124,58,237,.9), rgba(6,182,212,.9));
+      background:
+        radial-gradient(circle at 30% 30%, rgba(255,255,255,.18), rgba(255,255,255,0)),
+        linear-gradient(135deg, rgba(124,58,237,.95), rgba(6,182,212,.9));
       box-shadow: var(--shadow);
       position: relative;
-      overflow: hidden;
+      overflow:hidden;
+      flex: 0 0 auto;
     }
     .logo::after{
       content:"";
-      position:absolute; inset:-60%;
-      background: conic-gradient(from 180deg, transparent, rgba(255,255,255,.22), transparent);
-      animation: spin 6s linear infinite;
+      position:absolute; inset:-65%;
+      background: conic-gradient(from 180deg, transparent, rgba(255,255,255,.20), transparent);
+      animation: spin 7s linear infinite;
     }
+    @keyframes spin{ to{ transform: rotate(360deg);} }
 
-    @keyframes spin { to { transform: rotate(360deg);} }
+    .brandText strong{ display:block; font-size: 14px; letter-spacing:.2px; }
+    .brandText span{ display:block; font-size: 12px; color: var(--muted); }
 
-    .brand strong{ font-size: 14px; letter-spacing:.2px; }
-    .brand span{ display:block; font-size: 12px; color: var(--muted); }
-
-    nav{
-      display:flex; align-items:center; gap: 10px;
-    }
+    nav{ display:flex; gap: 6px; }
     .navlink{
       font-size: 13px;
       color: var(--muted);
       padding: 9px 12px;
       border-radius: 999px;
       border: 1px solid transparent;
-      transition: transform .2s ease, background .2s ease, border-color .2s ease, color .2s ease;
+      transition: background .2s ease, border-color .2s ease, transform .2s ease, color .2s ease;
     }
     .navlink:hover{
       background: rgba(255,255,255,.06);
-      border-color: rgba(255,255,255,.12);
+      border-color: rgba(255,255,255,.14);
       color: rgba(255,255,255,.90);
       transform: translateY(-1px);
     }
 
-    .cta{
-      display:flex; align-items:center; gap: 10px;
-    }
     .btn{
       font-size: 13px;
       padding: 10px 14px;
@@ -113,7 +104,6 @@
       border: 1px solid rgba(255,255,255,.14);
       background: rgba(255,255,255,.05);
       color: rgba(255,255,255,.90);
-      box-shadow: none;
       transition: transform .2s ease, background .2s ease, border-color .2s ease;
       white-space: nowrap;
     }
@@ -127,34 +117,29 @@
       background: linear-gradient(135deg, rgba(124,58,237,.95), rgba(6,182,212,.85));
     }
 
-    /* ====== hero ====== */
-    .hero{
-      display:grid;
-      grid-template-columns: 1.35fr .65fr;
-      gap: 22px;
-      margin-top: 18px;
-      align-items: stretch;
-    }
     .card{
       border: 1px solid rgba(255,255,255,.12);
       background: rgba(255,255,255,.05);
       border-radius: var(--radius);
       box-shadow: var(--shadow);
-      overflow: hidden;
     }
-    .heroMain{
-      padding: 34px;
+
+    /* HERO (streamlined) */
+    .hero{
+      margin-top: 16px;
+      padding: 30px;
       position: relative;
+      overflow:hidden;
     }
-    .heroMain::before{
+    .hero::before{
       content:"";
       position:absolute; inset:-1px;
-      background: radial-gradient(800px 400px at 10% 10%, rgba(124,58,237,.25), transparent 60%),
-                  radial-gradient(600px 380px at 80% 20%, rgba(6,182,212,.20), transparent 60%);
+      background:
+        radial-gradient(780px 360px at 10% 10%, rgba(124,58,237,.22), transparent 60%),
+        radial-gradient(640px 360px at 85% 20%, rgba(6,182,212,.16), transparent 60%);
       pointer-events:none;
-      opacity: .9;
     }
-    .heroMain > * { position: relative; }
+    .hero > *{ position:relative; }
 
     .kicker{
       display:inline-flex; gap:10px; align-items:center;
@@ -166,156 +151,77 @@
       font-size: 12px;
     }
     .dot{
-      width: 8px; height: 8px; border-radius: 50%;
+      width: 8px; height: 8px; border-radius:50%;
       background: rgba(34,197,94,.95);
       box-shadow: 0 0 0 6px rgba(34,197,94,.10);
       animation: pulse 1.8s ease-in-out infinite;
     }
     @keyframes pulse{
       0%,100%{ transform: scale(1); opacity:.95; }
-      50%{ transform: scale(1.12); opacity:.65; }
+      50%{ transform: scale(1.12); opacity:.7; }
     }
 
     h1{
-      margin: 16px 0 10px;
-      font-size: clamp(28px, 3.5vw, 46px);
-      line-height: 1.06;
+      margin: 14px 0 10px;
+      font-size: clamp(28px, 3.4vw, 44px);
+      line-height: 1.07;
       letter-spacing: -.6px;
     }
-    .subtitle{
+    .sub{
+      margin: 0;
       color: var(--muted);
       font-size: 15px;
-      line-height: 1.55;
-      max-width: 62ch;
+      line-height: 1.6;
+      max-width: 70ch;
     }
-    .heroActions{
-      margin-top: 18px;
+    .actions{
+      margin-top: 16px;
       display:flex;
-      flex-wrap: wrap;
       gap: 10px;
+      flex-wrap: wrap;
     }
 
-    .heroSide{
-      padding: 22px;
-      display:flex;
-      flex-direction: column;
-      gap: 14px;
-    }
-    .mini{
-      padding: 14px;
-      border-radius: 14px;
-      border: 1px solid rgba(255,255,255,.12);
-      background: rgba(255,255,255,.04);
-    }
-    .mini h3{
-      margin: 0 0 6px;
-      font-size: 13px;
-      color: rgba(255,255,255,.88);
-      letter-spacing: .2px;
-    }
-    .mini p{
-      margin: 0;
-      font-size: 13px;
-      color: var(--muted);
-      line-height: 1.5;
-    }
-    .chips{
-      display:flex; flex-wrap: wrap; gap: 8px; margin-top: 10px;
-    }
-    .chip{
-      font-size: 12px;
-      padding: 7px 10px;
-      border-radius: 999px;
-      border: 1px solid rgba(255,255,255,.12);
-      background: rgba(255,255,255,.03);
-      color: rgba(255,255,255,.82);
-    }
-
-    /* ====== sections ====== */
-    section{ margin-top: 26px; }
+    /* Sections */
+    section{ margin-top: 22px; }
     .sectionHead{
-      display:flex;
-      align-items:flex-end;
-      justify-content: space-between;
-      gap: 14px;
-      margin-bottom: 12px;
+      display:flex; align-items:baseline; justify-content: space-between; gap: 12px;
+      margin-bottom: 10px;
     }
-    h2{
-      margin: 0;
-      font-size: 18px;
-      letter-spacing: .2px;
-    }
-    .hint{
-      margin: 0;
-      color: var(--muted);
-      font-size: 13px;
-    }
+    h2{ margin:0; font-size: 16px; letter-spacing:.2px; }
+    .hint{ margin:0; font-size: 13px; color: var(--muted); }
 
     .grid{
       display:grid;
-      grid-template-columns: repeat(12, 1fr);
-      gap: 14px;
-    }
-    .col-6{ grid-column: span 6; }
-    .col-4{ grid-column: span 4; }
-    .col-8{ grid-column: span 8; }
-    .col-12{ grid-column: span 12; }
-
-    .item{
-      padding: 18px;
-      position: relative;
-      transition: transform .25s ease, border-color .25s ease, background .25s ease;
-      cursor: default;
-    }
-    .item:hover{
-      transform: translateY(-3px);
-      border-color: rgba(255,255,255,.20);
-      background: rgba(255,255,255,.07);
-    }
-    .itemTop{
-      display:flex;
-      align-items:flex-start;
-      justify-content: space-between;
+      grid-template-columns: 1fr;
       gap: 12px;
-      margin-bottom: 10px;
     }
+
+    /* Projects list = simple */
+    .list{
+      padding: 16px 18px;
+    }
+    .proj{
+      padding: 12px 0;
+      border-top: 1px solid rgba(255,255,255,.10);
+    }
+    .proj:first-child{ border-top: 0; padding-top: 0; }
+    .projTitle{
+      display:flex; align-items:flex-start; justify-content: space-between; gap: 12px;
+    }
+    .projTitle strong{ font-size: 14px; }
     .tag{
       font-size: 11px;
       padding: 6px 10px;
       border-radius: 999px;
       border: 1px solid rgba(255,255,255,.12);
-      color: rgba(255,255,255,.82);
       background: rgba(255,255,255,.03);
+      color: rgba(255,255,255,.82);
       white-space: nowrap;
     }
-    .item h3{
-      margin: 0;
-      font-size: 14px;
-      letter-spacing: .2px;
-    }
-    .item p{
-      margin: 8px 0 0;
-      color: var(--muted);
-      font-size: 13px;
-      line-height: 1.55;
-    }
-    .bullets{
-      margin: 10px 0 0;
-      padding-left: 18px;
-      color: rgba(255,255,255,.78);
-      font-size: 13px;
-      line-height: 1.55;
-    }
-    .bullets li{ margin: 6px 0; color: var(--muted); }
-    .links{
-      margin-top: 12px;
-      display:flex;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
+    .proj p{ margin: 6px 0 0; color: var(--muted); font-size: 13px; line-height: 1.55; }
+    .links{ margin-top: 8px; display:flex; gap: 10px; flex-wrap: wrap; }
     .link{
       font-size: 12px;
-      color: rgba(255,255,255,.86);
       padding: 8px 10px;
       border-radius: 12px;
       border: 1px solid rgba(255,255,255,.12);
@@ -328,69 +234,79 @@
       border-color: rgba(255,255,255,.20);
     }
 
-    /* ====== timeline ====== */
-    .timeline{
-      padding: 18px;
+    /* Impact bullets = short */
+    .impact{
+      padding: 16px 18px;
     }
-    .step{
-      display:grid;
-      grid-template-columns: 130px 1fr;
-      gap: 14px;
-      padding: 12px 0;
-      border-top: 1px solid rgba(255,255,255,.10);
-    }
-    .step:first-child{ border-top: 0; padding-top: 0; }
-    .when{ color: var(--muted); font-size: 12px; }
-    .what strong{ display:block; font-size: 13px; margin-bottom: 4px; }
-    .what span{ color: var(--muted); font-size: 13px; line-height: 1.5; }
-
-    /* ====== footer ====== */
-    footer{
-      margin-top: 34px;
-      padding-top: 18px;
-      border-top: 1px solid rgba(255,255,255,.10);
+    .impact ul{
+      margin: 0;
+      padding-left: 18px;
       color: var(--muted);
       font-size: 13px;
+      line-height: 1.7;
+    }
+    .impact li{ margin: 6px 0; }
+    .impact strong{ color: rgba(255,255,255,.86); }
+
+    /* Skills chips = compact */
+    .chips{
+      display:flex; flex-wrap: wrap; gap: 8px;
+      padding: 16px 18px;
+    }
+    .chip{
+      font-size: 12px;
+      padding: 7px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.03);
+      color: rgba(255,255,255,.82);
+    }
+
+    /* Contact = simple */
+    .contact{
+      padding: 16px 18px;
+      display:flex;
+      flex-wrap: wrap;
+      align-items:center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    .contact p{ margin:0; color: var(--muted); font-size: 13px; line-height: 1.5; }
+
+    footer{
+      margin-top: 26px;
+      padding-top: 16px;
+      border-top: 1px solid rgba(255,255,255,.10);
+      color: rgba(255,255,255,.55);
+      font-size: 12px;
       display:flex;
       justify-content: space-between;
-      gap: 14px;
+      gap: 12px;
       flex-wrap: wrap;
     }
 
-    /* ====== motion ====== */
-    .reveal{
-      opacity: 0;
-      transform: translateY(12px);
-      transition: opacity .7s ease, transform .7s ease;
-    }
-    .reveal.in{
-      opacity: 1;
-      transform: translateY(0);
-    }
+    /* reveal animation (subtle) */
+    .reveal{ opacity: 0; transform: translateY(10px); transition: opacity .6s ease, transform .6s ease; }
+    .reveal.in{ opacity: 1; transform: translateY(0); }
 
-    /* prefers-reduced-motion */
+    @media (max-width: 760px){
+      nav{ display:none; } /* cleaner on mobile */
+    }
     @media (prefers-reduced-motion: reduce){
-      * { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
-      .reveal{ opacity: 1; transform: none; }
-    }
-
-    /* responsive */
-    @media (max-width: 900px){
-      .hero{ grid-template-columns: 1fr; }
-      .col-6, .col-4, .col-8 { grid-column: span 12; }
-      .step{ grid-template-columns: 1fr; }
+      *{ animation:none !important; transition:none !important; scroll-behavior:auto !important; }
+      .reveal{ opacity: 1; transform:none; }
     }
   </style>
 </head>
 
 <body>
-  <div class="container">
+  <div class="wrap">
     <header>
       <div class="brand">
         <div class="logo" aria-hidden="true"></div>
-        <div>
-          <strong>Your Name</strong>
-          <span>Software Engineer • Performance & Product</span>
+        <div class="brandText">
+          <strong>Aditya Manikantan</strong>
+          <span>Software Developer</span>
         </div>
       </div>
 
@@ -401,340 +317,158 @@
         <a class="navlink" href="#contact">Contact</a>
       </nav>
 
-      <div class="cta">
+      <div style="display:flex; gap:10px; align-items:center;">
         <a class="btn" href="https://github.com/yourhandle" target="_blank" rel="noreferrer">GitHub</a>
-        <a class="btn primary" href="#contact">Hire / Collaborate</a>
+        <a class="btn primary" href="#contact">Contact</a>
       </div>
     </header>
 
     <main>
-      <!-- HERO -->
-      <div class="hero">
-        <div class="card heroMain reveal">
-          <div class="kicker"><span class="dot"></span> Open to: Software Engineer (Backend/Full-Stack) • Toronto/Remote</div>
-          <h1>I build reliable software that ships fast — and runs even faster.</h1>
-          <p class="subtitle">
-            I’m a software engineer who focuses on <strong>performance, clean architecture, and pragmatic delivery</strong>.
-            I’ve improved slow systems by optimizing queries, reducing API latency, and building tooling that makes teams move quicker.
-            I also build AI/LLM prototypes and automation when it creates real product leverage.
-          </p>
-
-          <div class="heroActions">
-            <a class="btn primary" href="#projects">See projects</a>
-            <a class="btn" href="https://www.linkedin.com/in/yourhandle" target="_blank" rel="noreferrer">LinkedIn</a>
-            <a class="btn" href="resume.pdf" target="_blank" rel="noreferrer">Resume (PDF)</a>
-          </div>
-
-          <div class="chips" style="margin-top:18px;">
-            <span class="chip">C# / .NET</span>
-            <span class="chip">SQL Server</span>
-            <span class="chip">APIs</span>
-            <span class="chip">Performance Tuning</span>
-            <span class="chip">Cloud + DevOps basics</span>
-            <span class="chip">AI/LLM prototyping</span>
-          </div>
+      <section class="card hero reveal" id="top">
+        <div class="kicker"><span class="dot"></span> Backend / Full-Stack • Toronto / Remote</div>
+        <h1>I ship clean software — with measurable performance improvements.</h1>
+        <p class="sub">
+          I build production apps across API + database + UI layers.
+          I like taking slow, unreliable workflows and turning them into fast, stable systems with good engineering hygiene:
+          profiling, query tuning, batching, caching, and sensible architecture.
+        </p>
+        <div class="actions">
+          <a class="btn primary" href="#projects">View projects</a>
+          <a class="btn" href="https://www.linkedin.com/in/yourhandle" target="_blank" rel="noreferrer">LinkedIn</a>
+          <a class="btn" href="resume.pdf" target="_blank" rel="noreferrer">Resume</a>
         </div>
+      </section>
 
-        <aside class="card heroSide reveal">
-          <div class="mini">
-            <h3>What I’m known for</h3>
-            <p>Owning messy problems end-to-end: diagnose, fix, ship, measure.</p>
-          </div>
-          <div class="mini">
-            <h3>Impact themes</h3>
-            <p>Latency ↓ • reliability ↑ • developer experience ↑ • automation ↑</p>
-          </div>
-          <div class="mini">
-            <h3>Quick stats (edit these)</h3>
-            <p>
-              • X+ years building production software<br/>
-              • Reduced critical workflow time by <strong>__%</strong><br/>
-              • Cut slow query/API latency by <strong>__%</strong><br/>
-              • Built internal tooling used by <strong>__</strong> teammates
-            </p>
-          </div>
-        </aside>
-      </div>
-
-      <!-- PROJECTS -->
       <section id="projects" class="reveal">
         <div class="sectionHead">
-          <h2>Selected Projects</h2>
-          <p class="hint">Real work, but company-neutral — focused on outcomes.</p>
+          <h2>Projects</h2>
+          <p class="hint">Company-neutral. Outcome-focused.</p>
         </div>
 
-        <div class="grid">
-          <article class="card item col-6">
-            <div class="itemTop">
-              <h3>High-Throughput Order & Attachment API</h3>
-              <span class="tag">Backend • .NET • SQL</span>
+        <div class="card list">
+          <div class="proj">
+            <div class="projTitle">
+              <strong>High-Throughput Order & Attachment API</strong>
+              <span class="tag">.NET • SQL</span>
             </div>
             <p>
-              Built an API to handle multi-step order workflows + file uploads with strong validation, predictable errors,
-              and careful database interactions.
+              Designed a reliable API for multi-step workflows and file uploads, with predictable validation + safe data handling.
+              Focus: fewer DB round trips, consistent error handling, and measurable latency wins.
             </p>
-            <ul class="bullets">
-              <li>Improved end-to-end latency by optimizing SQL and reducing round trips (batching + smarter queries).</li>
-              <li>Added idempotent patterns to prevent duplicate operations during retries/timeouts.</li>
-              <li>Implemented safe file handling and metadata indexing for faster retrieval.</li>
-            </ul>
             <div class="links">
-              <a class="link" href="#" title="Add link">Case study</a>
-              <a class="link" href="#" title="Add link">GitHub (if public)</a>
+              <a class="link" href="#">Case study</a>
+              <a class="link" href="#">GitHub (if public)</a>
             </div>
-          </article>
+          </div>
 
-          <article class="card item col-6">
-            <div class="itemTop">
-              <h3>Performance Tuning: “Slow Screen” to “Instant”</h3>
-              <span class="tag">Optimization • Profiling</span>
+          <div class="proj">
+            <div class="projTitle">
+              <strong>Performance Tuning: Slow Workflow → Fast Path</strong>
+              <span class="tag">Profiling</span>
             </div>
             <p>
-              Diagnosed a sluggish UI/data-loading workflow and drove improvements across the stack.
+              Investigated bottlenecks (N+1 queries, heavy allocations, UI blocking) and shipped improvements with before/after metrics.
             </p>
-            <ul class="bullets">
-              <li>Profiled hotspots and replaced expensive per-row calls with set-based operations.</li>
-              <li>Introduced caching + pagination where it mattered (measured before/after).</li>
-              <li>Reduced memory churn by disposing resources correctly and minimizing large allocations.</li>
-            </ul>
             <div class="links">
-              <a class="link" href="#" title="Add link">Before/After metrics</a>
-              <a class="link" href="#" title="Add link">Write-up</a>
+              <a class="link" href="#">Before/After</a>
+              <a class="link" href="#">Write-up</a>
             </div>
-          </article>
+          </div>
 
-          <article class="card item col-4">
-            <div class="itemTop">
-              <h3>LLM Research Reporter (Multi-Agent)</h3>
-              <span class="tag">AI/LLM • Python</span>
+          <div class="proj">
+            <div class="projTitle">
+              <strong>LLM Research Reporter</strong>
+              <span class="tag">Python • AI</span>
             </div>
             <p>
-              Prototype that searches the web, summarizes sources, and generates structured reports with citations.
+              A multi-step tool that searches, summarizes, and produces structured reports with guardrails for reliability.
             </p>
-            <ul class="bullets">
-              <li>Pipeline: search → rank → summarize → synthesize → export.</li>
-              <li>Focus on reliability: prompt constraints, eval checks, and failure handling.</li>
-            </ul>
             <div class="links">
               <a class="link" href="#">Demo</a>
               <a class="link" href="#">GitHub</a>
             </div>
-          </article>
-
-          <article class="card item col-4">
-            <div class="itemTop">
-              <h3>Automation Tools for Ops Teams</h3>
-              <span class="tag">Internal Tools</span>
-            </div>
-            <p>
-              Built scripts/utilities that reduced repetitive manual steps and prevented common errors.
-            </p>
-            <ul class="bullets">
-              <li>Cut manual processing time by <strong>__%</strong> by automating validation + generation steps.</li>
-              <li>Improved auditability via structured logs and consistent IDs.</li>
-            </ul>
-            <div class="links">
-              <a class="link" href="#">Notes</a>
-            </div>
-          </article>
-
-          <article class="card item col-4">
-            <div class="itemTop">
-              <h3>Modern UI App (Cross-Platform)</h3>
-              <span class="tag">Mobile/Desktop</span>
-            </div>
-            <p>
-              Worked on a clean UI architecture with async data loading, offline-friendly patterns, and smooth navigation.
-            </p>
-            <ul class="bullets">
-              <li>Improved perceived performance with skeleton loading + progressive rendering.</li>
-              <li>Reduced crash rate by fixing edge cases in lifecycle + resource management.</li>
-            </ul>
-            <div class="links">
-              <a class="link" href="#">Screenshots</a>
-            </div>
-          </article>
+          </div>
         </div>
       </section>
 
-      <!-- IMPACT -->
       <section id="impact" class="reveal">
         <div class="sectionHead">
-          <h2>Impact Highlights</h2>
-          <p class="hint">Use numbers where you can — swap in real metrics.</p>
+          <h2>Impact</h2>
+          <p class="hint">Short and scannable.</p>
         </div>
 
-        <div class="grid">
-          <article class="card item col-8">
-            <div class="itemTop">
-              <h3>How I improve performance</h3>
-              <span class="tag">Playbook</span>
-            </div>
-            <p>
-              I treat performance like a product feature: measure → fix the biggest bottleneck → verify.
-            </p>
-            <ul class="bullets">
-              <li><strong>Database:</strong> indexes, query shape, set-based updates, avoiding N+1, correct data types.</li>
-              <li><strong>API:</strong> batching, idempotency keys, payload trimming, caching, resilient retries.</li>
-              <li><strong>App:</strong> async + cancellation, resource disposal, reducing allocations, pagination.</li>
-              <li><strong>Proof:</strong> dashboards/benchmarks to show before/after (latency, throughput, errors).</li>
-            </ul>
-          </article>
-
-          <article class="card item col-4">
-            <div class="itemTop">
-              <h3>Example wins (edit)</h3>
-              <span class="tag">Metrics</span>
-            </div>
-            <ul class="bullets">
-              <li>Latency: <strong>__ms → __ms</strong></li>
-              <li>Time saved: <strong>__ hrs/week</strong></li>
-              <li>Error rate: <strong>__% → __%</strong></li>
-              <li>Build/release: <strong>__% faster</strong></li>
-            </ul>
-          </article>
+        <div class="card impact">
+          <ul>
+            <li><strong>Performance:</strong> reduced latency by optimizing SQL, batching calls, and trimming payloads (replace with real numbers).</li>
+            <li><strong>Reliability:</strong> introduced safer workflows (idempotency, better validation, clearer errors) to prevent repeat failures.</li>
+            <li><strong>Developer speed:</strong> built internal tooling + automation that reduced repetitive work and improved consistency.</li>
+          </ul>
         </div>
       </section>
 
-      <!-- SKILLS -->
       <section id="skills" class="reveal">
         <div class="sectionHead">
           <h2>Skills</h2>
-          <p class="hint">Strong on fundamentals, pragmatic on tooling.</p>
+          <p class="hint">Tools I’m effective with.</p>
         </div>
 
-        <div class="grid">
-          <article class="card item col-4">
-            <div class="itemTop">
-              <h3>Backend</h3>
-              <span class="tag">APIs</span>
-            </div>
-            <p>.NET • REST • Authentication • Validation • Background jobs • Logging</p>
-          </article>
-
-          <article class="card item col-4">
-            <div class="itemTop">
-              <h3>Data</h3>
-              <span class="tag">SQL</span>
-            </div>
-            <p>SQL Server • Query optimization • Indexing • Transactions • Stored procedures</p>
-          </article>
-
-          <article class="card item col-4">
-            <div class="itemTop">
-              <h3>AI/LLM Prototyping</h3>
-              <span class="tag">Python</span>
-            </div>
-            <p>Prompting • Agents • Web research workflows • Evaluation checks • Rapid demos</p>
-          </article>
-
-          <article class="card item col-12 timeline">
-            <div class="itemTop">
-              <h3>Career Snapshot (company-neutral)</h3>
-              <span class="tag">Timeline</span>
-            </div>
-
-            <div class="step">
-              <div class="when">2022 → Present</div>
-              <div class="what">
-                <strong>Software Developer</strong>
-                <span>Built and maintained production apps, improved performance, and delivered features across UI/API/DB layers.</span>
-              </div>
-            </div>
-
-            <div class="step">
-              <div class="when">Earlier</div>
-              <div class="what">
-                <strong>Systems / Platform experience</strong>
-                <span>Hands-on with servers, networking, and operational reliability — helpful when debugging production issues.</span>
-              </div>
-            </div>
-          </article>
+        <div class="card chips">
+          <span class="chip">C# / .NET</span>
+          <span class="chip">SQL Server</span>
+          <span class="chip">REST APIs</span>
+          <span class="chip">Performance tuning</span>
+          <span class="chip">Async + resource management</span>
+          <span class="chip">Python (AI prototyping)</span>
+          <span class="chip">Git</span>
+          <span class="chip">Docker basics</span>
         </div>
       </section>
 
-      <!-- CONTACT -->
       <section id="contact" class="reveal">
         <div class="sectionHead">
           <h2>Contact</h2>
-          <p class="hint">Make it easy to reach you.</p>
+          <p class="hint">Let’s talk.</p>
         </div>
 
-        <div class="grid">
-          <article class="card item col-8">
-            <div class="itemTop">
-              <h3>Let’s build something useful</h3>
-              <span class="tag">Open to roles</span>
-            </div>
-            <p>
-              If you’re hiring for backend/full-stack roles, I’m happy to chat.
-              I care about shipping quality, measurable performance, and clean systems.
-            </p>
-            <div class="links">
-              <a class="link" href="mailto:you@example.com">you@example.com</a>
-              <a class="link" href="https://www.linkedin.com/in/yourhandle" target="_blank" rel="noreferrer">LinkedIn</a>
-              <a class="link" href="https://github.com/yourhandle" target="_blank" rel="noreferrer">GitHub</a>
-            </div>
-          </article>
-
-          <article class="card item col-4">
-            <div class="itemTop">
-              <h3>Now</h3>
-              <span class="tag">Focus</span>
-            </div>
-            <p>
-              Currently sharpening: system design, scaling patterns, and building polished demos that showcase impact.
-            </p>
-          </article>
+        <div class="card contact">
+          <p>
+            Best way to reach me: <a class="link" style="padding:6px 10px;" href="mailto:you@example.com">you@example.com</a>
+            <span style="margin-left:10px;"></span>
+            <a class="link" style="padding:6px 10px;" href="https://www.linkedin.com/in/yourhandle" target="_blank" rel="noreferrer">LinkedIn</a>
+          </p>
+          <a class="btn primary" href="#top">Back to top</a>
         </div>
       </section>
 
       <footer>
-        <span>© <span id="y"></span> Your Name. Built with vanilla HTML/CSS/JS.</span>
-        <span style="color:rgba(255,255,255,.55)">Tip: replace placeholders, add 2–3 real metrics, and you’re good.</span>
+        <span>© <span id="y"></span> Aditya Manikantan</span>
+        <span>Built with vanilla HTML/CSS/JS • minimal + fast</span>
       </footer>
     </main>
   </div>
 
   <script>
-    // Current year
     document.getElementById("y").textContent = new Date().getFullYear();
 
-    // Smooth-ish scroll for anchor clicks (respects reduce motion)
-    const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    // Smooth scroll for anchors
     document.querySelectorAll('a[href^="#"]').forEach(a => {
       a.addEventListener("click", (e) => {
         const id = a.getAttribute("href");
-        if (!id || id === "#") return;
         const el = document.querySelector(id);
         if (!el) return;
         e.preventDefault();
-        el.scrollIntoView({ behavior: prefersReduced ? "auto" : "smooth", block: "start" });
+        el.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "start" });
         history.pushState(null, "", id);
       });
     });
 
-    // Reveal on scroll
+    // Reveal on scroll (subtle)
     const io = new IntersectionObserver((entries) => {
-      for (const entry of entries) {
-        if (entry.isIntersecting) entry.target.classList.add("in");
-      }
+      for (const entry of entries) if (entry.isIntersecting) entry.target.classList.add("in");
     }, { threshold: 0.14 });
-
     document.querySelectorAll(".reveal").forEach(el => io.observe(el));
-
-    // Tiny parallax glow on mouse move (desktop only)
-    const hero = document.querySelector(".heroMain");
-    if (hero && !prefersReduced) {
-      window.addEventListener("mousemove", (e) => {
-        const r = hero.getBoundingClientRect();
-        const x = ((e.clientX - r.left) / r.width) - 0.5;
-        const y = ((e.clientY - r.top) / r.height) - 0.5;
-        hero.style.transform = `translateY(${Math.max(-4, Math.min(4, y * -6))}px)`;
-      }, { passive: true });
-
-      window.addEventListener("mouseleave", () => hero.style.transform = "translateY(0px)");
-    }
   </script>
 </body>
 </html>
